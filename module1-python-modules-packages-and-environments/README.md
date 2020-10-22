@@ -20,48 +20,39 @@ environment with `pipenv`, installing our dependencies, and making some classes.
 
 ## Assignment
 
-1) Create your own `lambdata-yourusername` package, as shown in lecture
+1) Create your own lambdata-yourusername package, as shown in lecture
 2) Implement at least 2 of the following "helper" utility functions:
-  - Check a dataframe for nulls, print/report them in a nice "pretty" format
-  - Report a confusion matrix, with labels for easier interpretation
-  - Train/*validate*/test split function for a dataframe
-  - "Generate more data" function, takes dataframes and makes more rows
-  - Contingency table + Chi-squared report function: takes two categorical
-    variables, outputs a contingency table and corresponding Chi-squared test
-  - Split addresses into multiple columns city, state zip -> df['city]
-    df['state'] df['zip'] use regexes to detect format and pull out important
-    pieces
-  - State abbreviation -> Full Name and visa versa. FL -> Florida, etc.
-    (Handle Washington DC and territories like Puerto Rico etc.)
-  - Single function to take a list, turn it into a series and add it to a
-    dataframe as a new column
-  - 1.5*Interquartile range outlier detection/removal function.
-  - Function to set notebook display options.
-  - Function to split dates ("MM/DD/YYYY", etc.) into multiple columns
-  - Your idea here! (You will implement more later in the week as well)
-3) Register for a [test PyPI account](https://test.pypi.org/account/register/)
-4) Publish your package as `lambdata-yourusername` (to avoid conflicts)
+
+* Check a dataframe for nulls and return the number of missing values.
+* Create a Train/test split function for a dataframe and returns both the training and testing sets.  
+* Develop a randomization function that randomizes all of a dataframes cells then returns that randomized dataframe. 
+* Split addresses into three columns (df['city], df['state'], and df['zip']) - you can use regexes to detect the format and pull out important pieces.
+* Return a new column with the full name from a State abbreviation column -> An input of FL would return Florida. 
+* A 1.5*Interquartile range outlier detection/removal function that gets rid of outlying rows and returns that outlier cleaned dataframe.
+* Function to split dates of format "MM/DD/YYYY" into multiple columns (df['month'], df['day'], df['year']) and then return the same dataframe with those additional columns.
+
+3) Register for a test PyPI account
+4) Publish your package as lambdata-yourusername (to avoid conflicts)
 5) Start a Python notebook, and install your package with
-  `!pip install --index-url https://test.pypi.org/simple/ lambdata-yourusername`
-6) `import lambdata_yourusername as lambdata` in your notebook, and try it out!
+!pip install --index-url https://test.pypi.org/simple/ lambdata-yourusername
+6) import lambdata_yourusername as lambdata in your notebook, and try it out!
 
 We'll step through in lecture - building and publishing a package requires
-`twine`, and is generally done with these commands:
-- `python setup.py sdist bdist_wheel` (build the actual package)
-- `twine upload --repository-url https://test.pypi.org/legacy/ dist/*`
+twine, and is generally done with these commands:
 
-`twine` itself can be installed with `pipenv install -d twine` so it is a
+python setup.py sdist bdist_wheel (builds the actual package)
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+twine itself can be installed with pipenv install -d twine so it is a
 development dependency.
 
 Many of the utility functions can be implemented with the right clever calls
-to `pandas`, `numpy`, and other libraries - that's fine! Use those as
+to pandas, numpy, and other libraries - that's fine! Use those as
 dependencies. There's still value in a package that encapsulates more
 complicated libraries and exposes streamlined functionality with a simplified
-API.
+API. If you would like to generate some fake data check out the Faker python package to craft specific data types.
 
-Also note - there's a lot more than 2 ideas above. Throughout the week, whenever
-you have finished the daily assignment baseline, you can always come back and
-add more functionality to your `lambdata` (including ideas of your own)!
+Also note - there's a lot more than 2 ideas above. Throughout the week, whenever you have finished the daily assignment baseline, you can always come back and add more functionality to your lambdata (including ideas of your own)!
 
 ## Resources and Stretch Goals
 
