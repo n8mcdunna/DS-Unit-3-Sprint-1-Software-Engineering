@@ -24,7 +24,7 @@ environment with `pipenv`, installing our dependencies, and making some classes.
 2) Implement at least 2 of the following "helper" utility functions:
 
 * Check a dataframe for nulls and return the number of missing values.
-* Create a Train/test split function for a dataframe and returns both the training and testing sets.  
+* Create a Train/Test split function for a dataframe and returns both the Training and Testing sets.  
 * Develop a randomization function that randomizes all of a dataframes cells then returns that randomized dataframe. 
 * Split addresses into three columns (df['city], df['state'], and df['zip']) - you can use regexes to detect the format and pull out important pieces.
 * Return a new column with the full name from a State abbreviation column -> An input of FL would return Florida. 
